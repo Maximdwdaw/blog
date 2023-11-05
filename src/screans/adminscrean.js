@@ -25,9 +25,44 @@ function Admin() {
   
 
 
+  async function post(newData) {
+    const response = await fetch("http://localhost:5000/push/post", {
+      method: "POST",
+      body: JSON.stringify(newData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   
+    if (response.ok) {
+      console.log("Новий обєкт створено");
+    } else {
+      console.error("Помилка при надсиланні даних:  ", response.status);
+    }
+  }
+  
+  
+// Создайте функцию для чтения файла как base64
+function readFileAsBase64(file, callback) {
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    if (callback && typeof callback === 'function') {
+      callback(reader.result);
+    }
+  };
+
+  reader.onerror = (error) => {
+    console.error('Ошибка чтения файла:', error);
+  };
+
+  reader.readAsDataURL(file);
+}
   function handleUpload() {
     if (img) {
+      readFileAsBase64(img, (base64String) => {
+        console.log('Изображение в формате Base64:', base64String);
+   
       alert("Не покидайте сторінки це може бути фатально") // Check if img is not null
       const imageRef = ref(storage, "images/" + img.name + v4());
       uploadBytes(imageRef, img).then(() => {
@@ -39,12 +74,12 @@ function Admin() {
               text: placeholder,
               data: formattedTime,
               fulltext: fulltext,
-              img: url
+              img: base64String
             }
 
           try { 
             
-            const response = await fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item", {
+            const response = await fetch("http://localhost:5000/push/post", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -62,10 +97,11 @@ function Admin() {
           } catch (error) {
             console.error("Error:", error);
           }
-      
+          });
         });
       });
-    }
+    };
+ 
   }
   useEffect(() => {
     listAll(imageListRef).then((res) => {
