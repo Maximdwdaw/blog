@@ -22,9 +22,11 @@
     top: 150px;
     border-radius: 20px;
     border: none;
+    
+    transition: transform 0.3s ease;
 }
 
-.b1 {
+#b1 {
     position: absolute;
     top: 10px;
     left: 50%;
@@ -34,29 +36,61 @@
     object-fit: cover; /* Этот стиль сохраняет пропорции изображения и делает его заполняющим */
     border-radius: 15px;
 }
-.place {
+@keyframes dwa {
+    0%{
+        width: 90%;
+        height: 200px;
+    }
+    100% {
+        width: 90%;
+        height: 90%;
+    }
+}
+@keyframes dwaf {
+    0%{        
+        width: 90%;
+        height: 90%;
+       
+    }
+    100% {
+        width: 90%;
+        height: 200px;
+    }
+}
+.entry {
+    animation: dwa 0.5s ease forwards;
+  }
+  .entrys {
+    animation: dwaf 0.5s ease forwards;
+  }
+#place {
     position: absolute;
-    top: 200px;
+    top: 22%;
     left: 50%;
     transform: translate(-50%);
     font-size: 30px;
     font-family: 'Zhizn';
     white-space: nowrap;
+    
+    transition: transform 0.3s ease;
 }
-.placedata {
+#placedata {
     position: absolute;
-    top: 250px;
+    top: 28%;
     left: 50%;
     transform: translate(-50%);
     font-size: 15px;
     
+    transition: transform 0.3s ease;
     white-space: nowrap;
 }
-.place-text {
+#place-text {
     position: absolute;
     top: 250px;
     left: 5px;
     font-size: 25px;
+    
+    transition: transform 0.3s ease;
 }
 .createpost {
     position: absolute;

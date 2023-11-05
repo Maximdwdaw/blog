@@ -5,18 +5,15 @@ import { initializeApp } from "firebase/app";
 import {getStorage} from 'firebase/storage'
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDecJcD5c0VRTTmnmCDFCmQ68u_GP6RCUs",
-  authDomain: "kpopnews4ever.firebaseapp.com",
-  databaseURL: "https://kpopnews4ever-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "kpopnews4ever",
-  storageBucket: "kpopnews4ever.appspot.com",
-  messagingSenderId: "513455849171",
-  appId: "1:513455849171:web:8bfaf682a900e18fbe5e26"
+  apiKey: "AIzaSyCW5ujlkQUFZk82hs35EtZy9hLjXOiQaZ4",
+  authDomain: "every-1eca1.firebaseapp.com",
+  databaseURL: "https://every-1eca1-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "every-1eca1",
+  storageBucket: "every-1eca1.appspot.com",
+  messagingSenderId: "1043366747325",
+  appId: "1:1043366747325:web:4f0723ea0a0954e76cabd4"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app)
-
-
-

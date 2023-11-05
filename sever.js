@@ -15,6 +15,13 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 
+
+
+
+
+
+
+
 app.use(cors()); // Включение CORS
 function add(obj) {
     fs.readFile('./bd/posts.json', 'utf8', (err, data) => {
@@ -41,7 +48,7 @@ function add(obj) {
         }
     });
 }
-
+console.log(2631972356157555555757575757575757575757575757575757575)
 
 async function get() {
     return new Promise((resolve, reject) => {
