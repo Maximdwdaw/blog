@@ -22,8 +22,8 @@
     "zlib": "^1.0.5"
   },
   "scripts": {
-    "start":"react-scripts start ; nodemon server.js",
-    "build": "react-scripts build",
+    "start":"react-scripts start ",
+    "build": "react-scripts build ; nodemon server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
