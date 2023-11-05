@@ -9,6 +9,16 @@ function Home() {
 
 
   useEffect(() => {
+
+
+
+    fetch("https://blog-three-mauve.vercel.app:5000/g")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+
+
     fetch("https://644ab0e4a8370fb32155be44.mockapi.io/item")
       .then((response) => response.json())
       .then((data) => {
